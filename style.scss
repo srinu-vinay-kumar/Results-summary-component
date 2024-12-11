@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
+
+$light-red: #ff5757;
+$orangey-yellow: #ffb01f;
+$green-teal: #00bd91;
+$cobalt-blue: #1125d4;
+$slate-blueBG: #7857ff;
+$royal-blueBG: #2e2be9;
+$violet-blueCircle: hsla(256, 72%, 46%, 1);
+$perisan-blueCircle: hsla(241, 72%, 46%, 0);
+$white: #ffffff;
+$pale-blue: #ebf1ff;
+$light-lavender: #c8c7ff;
+$dark-gray-blue: #303b5a;
+
+$weight500: 500;
+$weight700: 700;
+$weight800: 800;
+
+// *css reset*
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+body {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 18px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3vh;
+  background-color: $pale-blue;
+
+  main {
+    display: flex;
+    width: 55vw;
+    height: 80vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    .section1 {
+      flex-basis: 50%;
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      padding: 5vh 3vw;
+      gap: 2vh;
+      background: linear-gradient($slate-blueBG, $royal-blueBG);
+      .result {
+        color: $light-lavender;
+        font-weight: $weight700;
+      }
+      .final-score {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        color: $white;
+        font-size: 3.5em;
+        border-radius: 50%;
+        padding: 4rem;
+        background: linear-gradient($violet-blueCircle, $perisan-blueCircle);
+        aspect-ratio: 1 / 1;
+        .out-of {
+          color: $light-lavender;
+          font-size: medium;
+        }
+      }
+      .greatdesc {
+        text-align: center;
+        .great {
+          color: $white;
+          padding-bottom: 1vh;
+        }
+        .description {
+          color: $light-lavender;
+        }
+      }
+    }
+    .section2 {
+      flex-basis: 50%;
+      width: 100%;
+      border-radius: 0 10px 10px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 3vh 2.7vw;
+      gap: 1vh;
+      background-color: $white;
+      .summary {
+        color: $dark-gray-blue;
+        font-weight: $weight800;
+      }
+      .reaction,
+      .memory,
+      .verbal,
+      .visual {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        padding: 1.5vh 2vw;
+        border-radius: 10px;
+        .score {
+          margin-left: auto;
+          color: $dark-gray-blue;
+          font-weight: $weight800;
+          span {
+            color: $light-lavender;
+            font-weight: $weight800;
+          }
+        }
+        .iconTitle {
+          display: inline-flex;
+          gap: 1vw;
+        }
+      }
+      .reaction {
+        background-color: hsl(0, 100%, 96%);
+        .iconTitle {
+          .title {
+            color: $light-red;
+          }
+        }
+      }
+      .memory {
+        background-color: hsl(39, 100%, 93%);
+        .iconTitle {
+          .title {
+            color: $orangey-yellow;
+          }
+        }
+      }
+      .verbal {
+        background-color: hsl(166, 100%, 95%);
+        .iconTitle {
+          .title {
+            color: $green-teal;
+          }
+        }
+      }
+      .visual {
+        background-color: hsl(234, 85%, 97%);
+        .iconTitle {
+          .title {
+            color: $cobalt-blue;
+          }
+        }
+      }
+      .btn {
+        border: none;
+        background-color: $dark-gray-blue;
+        color: $pale-blue;
+        padding: 2vh 3vw;
+        border-radius: 35px;
+        &:hover {
+          background: linear-gradient($slate-blueBG, $royal-blueBG);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  footer{
+    margin: 0 6vw 3vh;
+    .attribution{
+      color: $dark-gray-blue;
+      a{
+        color:$slate-blueBG;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (max-width:576px){
+body{
+  main{
+    flex-direction: column;
+    height: 130vh;
+    width: 90vw;
+  }
+}
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  body{
+    main{
+      width: 95vw;
+      height: 150vh;
+    }
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body {
+    main {
+      width: 90vw;
+      height: 100vh;
+    }
+  }
+}
